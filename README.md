@@ -11,9 +11,64 @@ npx cap sync
 
 ## API
 
-<docgen-index></docgen-index>
+<docgen-index>
+
+* [`zip(...)`](#zip)
+* [`unZip(...)`](#unzip)
+* [Interfaces](#interfaces)
+
+</docgen-index>
 
 <docgen-api>
-<!-- run docgen to generate docs from the source -->
-<!-- More info: https://github.com/ionic-team/capacitor-docgen -->
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### zip(...)
+
+```typescript
+zip(options: ZipOptions) => Promise<void>
+```
+
+| Param         | Type                                              |
+| ------------- | ------------------------------------------------- |
+| **`options`** | <code><a href="#zipoptions">ZipOptions</a></code> |
+
+--------------------
+
+
+### unZip(...)
+
+```typescript
+unZip(options: UnZipOptions) => Promise<void>
+```
+
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#unzipoptions">UnZipOptions</a></code> |
+
+--------------------
+
+
+### Interfaces
+
+
+#### ZipOptions
+
+| Prop              | Type                 |
+| ----------------- | -------------------- |
+| **`source`**      | <code>string</code>  |
+| **`destination`** | <code>string</code>  |
+| **`keepParent`**  | <code>boolean</code> |
+| **`password`**    | <code>string</code>  |
+
+
+#### UnZipOptions
+
+| Prop              | Type                 |
+| ----------------- | -------------------- |
+| **`source`**      | <code>string</code>  |
+| **`destination`** | <code>string</code>  |
+| **`overwrite`**   | <code>boolean</code> |
+| **`password`**    | <code>string</code>  |
+
 </docgen-api>
+"# capacitor-plugin-zip" 
