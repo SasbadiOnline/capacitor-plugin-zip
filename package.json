@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-zip",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Zip or Unzip content",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -15,14 +15,14 @@
     "Package.swift",
     "CapacitorPluginZip.podspec"
   ],
-  "author": "Iqbal",
+  "author": "Iqbal Osman",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SasbadiOnline/capacitor-zip.git.git"
+    "url": "git+https://github.com/SasbadiOnline/capacitor-plugin-zip"
   },
   "bugs": {
-    "url": "https://github.com/SasbadiOnline/capacitor-zip.git/issues"
+    "url": "https://github.com/SasbadiOnline/capacitor-plugin-zip/issues"
   },
   "keywords": [
     "capacitor",
