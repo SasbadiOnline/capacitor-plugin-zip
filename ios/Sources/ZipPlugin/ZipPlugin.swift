@@ -11,7 +11,8 @@ public class ZipPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "ZipPlugin"
     public let jsName = "Zip"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "zip", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "unZip", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = Zip()
 
@@ -44,13 +45,6 @@ public class ZipPlugin: CAPPlugin, CAPBridgedPlugin {
                         "progress": progress,
                         "completed": false
                     ])
-                    /*
-                    call.success([
-                        "status": "progressing",
-                        "progress": progress,
-                        "completed": false
-                        ])
-                    */
                 }
             }
         })
@@ -62,13 +56,6 @@ public class ZipPlugin: CAPPlugin, CAPBridgedPlugin {
                 "progress": 100,
                 "completed": true
             ])
-            /*
-            call.success([
-                "status": "completed",
-                "progress": 100,
-                "completed": true
-                ])
-                */
         } else{
             call.error("Error creating zip file.")
         }
@@ -99,24 +86,23 @@ public class ZipPlugin: CAPPlugin, CAPBridgedPlugin {
                 let percent = entryNumber / entriesTotal * 100;
                 if (percent != progress) {
                     progress = Int(percent);
-
-                    call.success([
+                    self.notifyListeners("progress", data: [
                         "status": "progressing",
                         "progress": progress,
                         "completed": false
-                        ])
+                    ])
                 }
             }
 
         } , completionHandler: { (path, succeeded, err) in
 
             if(succeeded){
-                call.success([
+                self.notifyListeners("progress", data: [
                     "status": "completed",
                     "progress": 100,
                     "completed": true,
                     "path": destination
-                    ])
+                ])
             }else{
                 call.error(err?.localizedDescription ?? "Unknown error")
             }
