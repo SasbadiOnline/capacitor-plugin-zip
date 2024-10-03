@@ -1,6 +1,6 @@
 {
   "name": "@iqtech84/capacitor-plugin-zip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Zip or Unzip content",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
